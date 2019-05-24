@@ -1,0 +1,25 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+    <h5><span class="badge badge-primary">Tipo veicolo</span></h5>
+    <input type="text" class="form-control" [formControl]="myForm.controls['tipo']">
+    <div *ngIf="!myForm.controls['tipo'].valid" class="alert alert-danger">Il tipo è invalido</div>
+    <div *ngIf="myForm.controls['tipo'].hasError('required')" class="alert alert-danger">Devi inserire un tipo</div>
+
+    <h5><span class="badge badge-primary">Descrizione</span></h5>
+    <input type="text" class="form-control" [formControl]="myForm.controls['descrizione']">
+    <div *ngIf="!myForm.controls['descrizione'].valid" class="alert alert-danger">La descrizione è invalida</div>
+    <div *ngIf="myForm.controls['descrizione'].hasError('required')" class="alert alert-danger">Devi inserire una descrizione</div>
+
+    <h5><span class="badge badge-primary">Tariffa oraria</span></h5>
+    <input type="text" class="form-control" [formControl]="myForm.controls['tariffa']">
+    <div *ngIf="!myForm.controls['tariffa'].valid" class="alert alert-danger">tariffa è invalido</div>
+    <div *ngIf="myForm.controls['tariffa'].hasError('required')" class="alert alert-danger">Devi inserire una tariffa</div>
+
+    <h5><span class="badge badge-primary">Valutazione media</span></h5>
+    <input type="number" class="form-control" [formControl]="myForm.controls['valutazioneMedia']">
+    <div *ngIf="!myForm.controls['valutazioneMedia'].valid" class="alert alert-danger">Valutazione media è invalido</div>
+    <div *ngIf="myForm.controls['valutazioneMedia'].hasError('required')" class="alert alert-danger">Devi inserire una valutazione</div>
+
+    <div *ngIf="!myForm.valid" class="alert alert-danger">Il form non è valido</div>
+    <button class="btn btn-primary btn-block" type="submit">Inserisci</button>
+  </form>
+  <app-driving-list [mezzi]="mezzi"></app-driving-list>

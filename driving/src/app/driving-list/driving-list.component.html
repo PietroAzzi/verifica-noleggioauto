@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let mezzo of mezzi" [class.selected]="mezzo == mezzoSelezionato" (click)="onSelect(mezzo)">{{mezzo.tipo}}
+    <button (click)="dettagli(mezzo)">Noleggia il tuo mezzo</button>
+    <button type="button" class="btn btn-secondary" (click)="dettagli(mezzo)" >Nol</button>
+  </li>
+</ul>
+<app-driving-detail *ngIf="mezzoSelezionato" [mezzo]="mezzoSelezionato"></app-driving-detail>
