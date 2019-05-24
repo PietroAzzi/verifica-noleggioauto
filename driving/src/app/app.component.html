@@ -1,4 +1,4 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+<form class="jumbotron" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
     <h5><span class="badge badge-primary">Tipo veicolo</span></h5>
     <input type="text" class="form-control" [formControl]="myForm.controls['tipo']">
     <div *ngIf="!myForm.controls['tipo'].valid" class="alert alert-danger">Il tipo è invalido</div>
